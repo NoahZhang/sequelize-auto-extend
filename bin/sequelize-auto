@@ -60,7 +60,7 @@ configFile.host = argv.h || configFile.host || 'localhost';
 configFile.storage = argv.d;
 configFile.tables = configFile.tables || (argv.t && argv.t.split(',')) || null;
 configFile.model = argv.m || configFile.model || 'Sequelize';
-configFile.ignoreFields = configFile.ignoreFields || (argv.i && argv.i.split(',')) || null;
+configFile.ignoreFields = configFile.ignoreFields || (argv.i && argv.i.split(',')) || [];
 
 if (configFile.dialect.toLowerCase() === 'mssql' && configFile.port === 3306)
     configFile.port = 1433; // default port for MSSQL Server is 1433, not 3306

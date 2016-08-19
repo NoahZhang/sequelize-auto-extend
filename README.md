@@ -92,8 +92,74 @@ Produces a file/files such as ./models/Users.js which looks like:
       });
     };
 
-
 Which makes it easy for you to simply [Sequelize.import](http://docs.sequelizejs.com/en/latest/docs/models-definition/#import) it.
+
+Produce a JSON Schema file such as ./schemas/user.json which looks like:
+
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "avatar": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "qq": {
+          "type": "string",
+          "maxLength": 20
+        },
+        "wechat": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "salt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "role": {
+          "enum": ["admin","member"]
+        },
+        "status": {
+          "enum": ["disabled","enabled"]
+        },
+        "isDelete": {
+          "enum": ["yes","no"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "minLength": 1
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "minLength": 1
+        }
+      },
+      "required": ["id","name","password","salt","role","status","isDelete","createdAt","updatedAt"]
+    }
 
 ## Configuration options
 
