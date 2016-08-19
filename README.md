@@ -8,27 +8,11 @@ Automatically generate models for [SequelizeJS](https://github.com/sequelize/seq
 
 ## Prerequisites
 
-You will need to install the correct dialect binding globally before using sequelize-auto.
-
-Example for MySQL/MariaDB
-
-`npm install -g mysql`
-
-Example for Postgres
-
-`npm install -g pg pg-hstore`
-
-Example for Sqlite3
-
-`npm install -g sqlite`
-
-Example for MSSQL
-
-`npm install -g tedious`
+Download source code and execute `npm install`.
 
 ## Usage
 
-    [node] sequelize-auto -h <host> -d <database> -u <user> -x [password] -p [port]  --dialect [dialect] -c [/path/to/config] -o [/path/to/models] -t [tableName]
+    [node] sequelize-auto -h <host> -d <database> -u <user> -x [password] -p [port]  --dialect [dialect] -c [/path/to/config] -o [/path/to/models] -t [tableName] -m [Sequelize|JSON] -i [fields]
 
     Options:
       -h, --host        IP/Hostname for the database.   [required]
